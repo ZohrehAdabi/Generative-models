@@ -1,0 +1,137 @@
+{
+
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "${command:pickArgs}"
+        },
+        {
+            "name": "DDPM [2spirals][ToyNetwork2]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "300", "--model", "ToyNetwork2", "--dataset", "2spirals",  
+                "--time_dim", "64", "--batch_size", "128", "--total_size", "5000", "--n_epoch", "1000", "--lr",  "1e-3", "--n_samples", "1000",
+                "--seed","1", "--save_model", "--save_freq", "200", "--validation", "--save_hdf"
+                ] 
+        },
+        {
+            "name": "DDPM [2spirals][ToyNetwork2]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "300", "--model", "ToyNetwork2", "--dataset", "2spirals",  
+                "--time_dim", "64",  "--batch_size", "128", "--total_size", "5000", "--n_epoch", "1000", "--lr",  "1e-3", 
+                "--n_samples", "1000",
+                "--seed","1",  "--save_evaluation", "--save_hdf"
+                ]    
+        },
+        {
+            "name": "DDPM [25gaussians][ToyNetwork2]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "300", "--model", "ToyNetwork2", "--dataset", "25gaussians",  
+                "--time_dim", "64", "--batch_size", "128", "--total_size", "5000", "--n_epoch", "1000", "--lr",  "1e-3", "--n_samples", "1000",
+                "--seed","1", "--save_model", "--save_freq", "200", "--validation", "--save_hdf"
+                ] 
+        },
+        {
+            "name": "DDPM [25gaussians][ToyNetwork2]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "300", "--model", "ToyNetwork2", "--dataset", "25gaussians",  
+                "--time_dim", "64",  "--batch_size", "128", "--total_size", "5000", "--n_epoch", "1000", "--lr",  "1e-3", 
+                "--n_samples", "1000",
+                "--seed","1",  "--save_evaluation", "--save_hdf"
+                ]    
+        },
+        {
+            "name": "DDPM [2spirals][ToyNetwork1]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "1000", "--model", "ToyNetwork1", "--dataset", "2spirals",  
+                "--time_dim", "64", "--batch_size", "128", "--total_size", "5000", "--n_epoch", "1000", "--lr",  "1e-3", "--n_samples", "1000",
+                "--seed","1", "--save_model", "--save_freq", "200", "--validation", "--save_hdf"
+                ] 
+        },
+        {
+            "name": "DDPM [2spirals][ToyNetwork1]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "1000", "--model", "ToyNetwork1", "--dataset", "2spirals",  
+                "--time_dim", "64",  "--batch_size", "128", "--total_size", "5000", "--n_epoch", "1000", "--lr",  "1e-3", 
+                "--n_samples", "1000",
+                "--seed","1",  "--save_evaluation", "--save_hdf"
+                ]    
+        },
+        {
+            "name": "DDPM [swissroll][ToyNetwork1]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "1000", "--model", "ToyNetwork1", "--dataset", "swissroll",  
+                "--time_dim", "64", "--batch_size", "128", "--total_size", "5000", "--n_epoch", "1000", "--lr",  "1e-3", "--n_samples", "1000",
+                "--seed","1", "--save_model", "--save_freq", "200", "--validation", "--save_hdf"
+                ] 
+        },
+        {
+            "name": "DDPM [swissroll][ToyNetwork1]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "1000", "--model", "ToyNetwork1", "--dataset", "swissroll",  
+                "--time_dim", "64",  "--batch_size", "128", "--total_size", "5000", "--n_epoch", "1000", "--lr",  "1e-3", 
+                "--n_samples", "1000",
+                "--seed","1",  "--save_evaluation", "--save_hdf"
+                ]    
+        },
+        {
+            "name": "DDPM [swissroll][ToyNetwork4]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "1000", "--model", "ToyNetwork4", "--dataset", "swissroll",  
+                "--time_dim", "1", "--batch_size", "128", "--total_size", "100000", "--n_epoch", "1000", "--lr",  "1e-3", "--n_samples", "1000",
+                "--seed","1", "--save_model", "--save_freq", "500", "--validation", "--save_hdf"
+                ] 
+        },
+        {
+            "name": "DDPM [swissroll][ToyNetwork4]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "1000", "--model", "ToyNetwork4", "--dataset", "swissroll",  
+                "--time_dim", "1",  "--batch_size", "128", "--total_size", "100000", "--n_epoch", "1000", "--lr",  "1e-3", 
+                "--n_samples", "1000",
+                "--seed","1",  "--save_evaluation", "--save_hdf"
+                ]    
+        }
+    ]
+    }

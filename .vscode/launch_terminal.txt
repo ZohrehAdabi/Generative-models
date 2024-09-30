@@ -1,0 +1,28 @@
+python diffusion_ddpm_train.py --beta_schedule linear --n_timesteps 40 --model ToyDDPM_4_64 --dataset swissroll --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+
+python diffusion_ddpm_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyDDPM_4_64 --dataset swissroll --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_evaluation --save_hdf
+
+python diffusion_regression_train.py --beta_schedule linear --n_timesteps 40 --model ToyRegressionNet_4_64 --dataset swissroll --time_dim 1   --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+
+python diffusion_regression_test.py --beta_schedule linear --n_timesteps 40 --model ToyRegressionNet_4_64 --dataset swissroll --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_evaluation --save_hdf
+
+python diffusion_boosting_composition_train.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingCmps_4_64 --dataset swissroll --time_dim 1   --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+
+python diffusion_boosting_composition_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingCmps_4_64 --dataset swissroll --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_evaluation --save_hdf
+
+python diffusion_flow_matching_train.py --beta_schedule linear --n_timesteps 40 --model ToyBoosting_4_64 --dataset swissroll --gamma 0.025 --time_dim 1   --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+
+python diffusion_flow_matching_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyBoosting_4_64 --dataset swissroll --gamma 0.025 --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_evaluation --save_hdf
+
+python diffusion_flow_matching_train.py --beta_schedule linear --n_timesteps 40 --model ToyFlowMatching_4_64 --dataset swissroll --gamma 0.025 --time_dim 1   --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+
+python diffusion_flow_matching_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyFlowMatching_4_64 --dataset swissroll --gamma 0.025 --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_evaluation --save_hdf
+
+python diffusion_boosting_one_train.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingOne_4_64 --dataset swissroll --pred_goal noise --gamma 0.025 --time_dim 1    --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20  --validation --save_hdf
+
+python diffusion_boosting_one_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingOne_4_64 --dataset swissroll --pred_goal  noise --gamma 0.025 --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_evaluation --save_hdf
+
+python diffusion_boosting_one_train.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingOne_4_64 --dataset swissroll --pred_goal grad --gamma 0.025 --time_dim 1 --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20  --validation --save_hdf
+
+python diffusion_boosting_one_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingOne_4_64 --dataset swissroll --pred_goal  grad --gamma 0.025 --time_dim 1 --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_evaluation --save_hdf
+

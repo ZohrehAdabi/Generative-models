@@ -1,0 +1,370 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "${command:pickArgs}"
+        },
+        {
+            "name": "DDPM [swissroll][ToyDDPM]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_ddpm_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyDDPM_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1",  "--batch_size", "2048", "--total_size", "4096", 
+                "--n_epoch", "1000", "--lr",  "1e-3", "--n_samples", "1000", 
+                //"--normalize",
+                "--seed","1", "--save_model", "--save_freq", "50", "--validation", "--save_hdf"
+                //, "--save_fig"
+                ] 
+        // python diffusion_ddpm_train.py --beta_schedule linear --n_timesteps 40 --model ToyDDPM_4_64 --dataset swissroll --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+        },
+        {
+            "name": "DDPM [swissroll][ToyDDPM]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_ddpm_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyDDPM_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1",  "--batch_size", "2048", "--total_size", "100000", "--n_epoch", "100", 
+                "--lr",  "1e-3", "--n_samples", "1000", 
+                //"--normalize", 
+                "--seed","1",  "--save_eval", "--save_hdf"
+                //, "--save_fig"
+                ]    
+        // python diffusion_ddpm_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyDDPM_4_64 --dataset swissroll --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_eval --save_hdf 
+        },
+        {
+            "name": "Regression [swissroll][ToyRegressionNet]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_regression_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyRegressionNet_4_64",  "--time_dim", "1", 
+                "--dataset", "swissroll_regr", "--batch_size", "2048", "--total_size", "4096",  "--n_epoch", "100000",
+                "--lr",  "1e-3",  "--n_samples", "1000", 
+                //"--normalize",
+                "--seed","1", "--save_model", "--save_freq", "1000", "--validation", "--save_hdf"
+                , "--save_fig"
+                ] 
+        // python diffusion_regression_train.py --beta_schedule linear --n_timesteps 40 --model ToyRegressionNet_4_64 --dataset swissroll --time_dim 1   --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+        },
+        {
+            "name": "Regression [swissroll][ToyRegressionNet]: test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_regression_test.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyRegressionNet_4_64", "--time_dim", "1",
+                "--dataset", "swissroll_regr", "--batch_size", "2048", "--total_size", "4096", "--n_epoch", "100",
+                "--lr",  "1e-3", "--n_samples", "1000", 
+                //"--normalize", 
+                "--seed","1",  "--save_eval", "--save_hdf"
+                //, "--save_fig"
+                ]    
+        // python diffusion_regression_test.py --beta_schedule linear --n_timesteps 40 --model ToyRegressionNet_4_64 --dataset swissroll --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_eval --save_hdf 
+        },
+        {
+            "name": "Boosting_comps [swissroll][ToyBoostingCmps]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_boosting_composition_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "50", "--model", "ToyBoostingCmps_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1", "--batch_size", "2048", "--total_size", "10000", "--n_epoch", "100", 
+               "--lr",  "1e-3", "--n_samples", "1000", 
+                //"--normalize",
+                "--seed","1", "--save_model", "--save_freq", "100", "--validation", "--save_hdf"
+                //, "--save_fig"
+                ] 
+        // python diffusion_boosting_composition_train.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingCmps_4_64 --dataset swissroll --time_dim 1   --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+        },
+        {
+            "name": "Boosting_comps [swissroll][ToyBoostingCmps]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_boosting_composition_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "50", "--model", "ToyBoostingCmps_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1",  "--batch_size", "2048", "--total_size", "10000", "--n_epoch", "100", 
+                "--lr",  "1e-3", "--n_samples", "1000", 
+                //"--normalize", 
+                "--seed","1",  "--save_eval", "--save_hdf"
+                //, "--save_fig"
+                ]    
+        // python diffusion_boosting_composition_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingCmps_4_64 --dataset swissroll --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_eval --save_hdf 
+        },
+        {
+            "name": "Boosting [swissroll][ToyBoosting]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_boosting_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyBoosting_4_64", "--time_dim", "1",  
+                "--dataset", "swissroll_regr", "--batch_size", "512", "--total_size", "2048", "--n_epoch", "10",
+                "--lr",  "1e-3", "--innr_epoch", "100", "--gamma", "0.025", "--n_samples", "10000"
+                // , "--learner_inp", "pred_x", "--grad_type", "pred_x"
+                // , "--learner_inp", "pred_x", "--grad_type", "noise"
+                // , "--learner_inp", "x", "--grad_type", "pred_x"
+                // , "--learner_inp", "x", "--grad_type", "noise"
+                // , "--learner_inp", "x_noisy", "--grad_type", "pred_x"
+                // , "--learner_inp", "x_noisy", "--grad_type", "noise"
+                , "--learner_inp", "x_eps_noisy", "--grad_type", "eps_noise"
+                
+                // , "--learner_inp", "noise", "--grad_type", "pred_x"
+                // , "--learner_inp", "noise", "--grad_type", "noise"
+                //, "--normalize"
+                , "--seed","1", "--save_model", "--save_freq", "50", "--validation", "--save_hdf"
+                //, "--save_fig"
+                ] 
+        // python diffusion_boosting_train.py --beta_schedule linear --n_timesteps 40 --model ToyBoosting_4_64 --dataset swissroll --gamma 0.025 --time_dim 1   --batch_size 2048 --total_size 100000 --n_epoch 100 --innr_epoch 10 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+        },
+        {
+            "name": "Boosting [swissroll][ToyBoosting]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_boosting_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyBoosting_4_64", "--time_dim", "1",   
+                "--dataset", "swissroll_regr", "--batch_size", "2048", "--total_size", "1024", "--n_epoch", "1000",
+                "--lr",  "1e-3",  "--innr_epoch", "1", "--gamma", "0.025", "--n_samples", "1000"
+                , "--learner_inp", "pred_x", "--grad_type", "pred_x"
+                // , "--learner_inp", "pred_x", "--grad_type", "noise"
+                // , "--learner_inp", "x", "--grad_type", "pred_x"
+                // , "--learner_inp", "x", "--grad_type", "noise"
+                // , "--learner_inp", "x_noisy", "--grad_type", "pred_x"
+                // , "--learner_inp", "x_noisy", "--grad_type", "noise"
+                // , "--learner_inp", "noise", "--grad_type", "pred_x"
+                // , "--learner_inp", "noise", "--grad_type", "noise"
+                //"--normalize", 
+                ,"--seed","1",  "--save_eval", "--save_hdf"
+                //, "--save_fig"
+                ]    
+        // python diffusion_boosting_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyBoosting_4_64 --dataset swissroll --gamma 0.025 --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --innr_epoch 10 --lr 1e-3 --n_samples 1000 --seed 1 --save_eval --save_hdf 
+        },
+        {
+            "name": "Boosting [swissroll][ToyBoostingSep]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_boosting_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyBoostingSep_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1", "--batch_size", "1024", "--total_size", "1024", "--n_epoch", "1000",
+                "--lr",  "1e-3", "--innr_epoch", "1", "--gamma", "0.025", "--n_samples", "1000"
+                //, "--noise_input"
+                //, "--normalize"
+                , "--seed","1", "--save_model", "--save_freq", "50", "--validation", "--save_hdf"
+                //, "--save_fig"
+                ] 
+        // python diffusion_boosting_train.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingSep_4_64 --dataset swissroll --gamma 0.025 --time_dim 1   --batch_size 1024 --total_size 1024 --n_epoch 1 --innr_epoch 10 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+        },
+        {
+            "name": "Boosting [swissroll][ToyBoostingSep]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_boosting_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyBoostingSep_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1",  "--batch_size", "2048", "--total_size", "1024", "--n_epoch", "1000",
+                "--lr",  "1e-3",  "--innr_epoch", "1", "--gamma", "0.025", "--n_samples", "1000", 
+                //"--normalize", 
+                "--seed","1",  "--save_eval", "--save_hdf"
+                //, "--save_fig"
+                ]    
+        // python diffusion_boosting_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingSep_4_64 --dataset swissroll --gamma 0.025 --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --innr_epoch 10 --lr 1e-3 --n_samples 1000 --seed 1 --save_eval --save_hdf 
+        },
+        {
+            "name": "FlowMatching [swissroll][ToyFlowMatching]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_flow_matching_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyFlowMatching_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1", "--batch_size", "2048", "--total_size", "4096", "--n_epoch", "1000",
+                "--lr",  "1e-3", "--gamma", "0.025", "--n_samples", "1000", 
+                //"--normalize",
+                "--seed","1", "--save_model", "--save_freq", "100", "--validation", "--save_hdf"
+                //, "--save_fig"
+                ] 
+        // python diffusion_flow_matching_train.py --beta_schedule linear --n_timesteps 40 --model ToyFlowMatching_4_64 --dataset swissroll --gamma 0.025 --time_dim 1   --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20 --validation --save_hdf
+        },
+        {
+            "name": "FlowMatching [swissroll][ToyFlowMatching]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_flow_matching_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyFlowMatching_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1",  "--batch_size", "2048", "--total_size", "100000", "--n_epoch", "100",
+                "--lr",  "1e-3",  "--gamma", "0.025", "--n_samples", "1000", 
+                //"--normalize", 
+                "--seed","1",  "--save_eval", "--save_hdf"
+                //, "--save_fig"
+                ]    
+        // python diffusion_flow_matching_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyFlowMatching_4_64 --dataset swissroll --gamma 0.025 --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_eval --save_hdf 
+        },
+
+        {
+            "name": "BoostingOne [noise][swissroll][ToyBoostingOne]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_boosting_one_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyBoostingOne_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1", "--batch_size", "2048", "--total_size", "100000", "--n_epoch", "100", 
+                "--lr",  "1e-3", "--pred_goal", "noise", "--gamma", "0.025", "--n_samples", "1000", 
+                //"--normalize",
+                "--seed","1", "--save_model", "--save_freq", "5", "--validation", "--save_hdf"
+                //, "--save_fig"
+                ] 
+        // python diffusion_boosting_one_train.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingOne_4_64 --dataset swissroll --pred_goal noise --gamma 0.025 --time_dim 1    --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20  --validation --save_hdf
+        },
+        {
+            "name": "BoostingOne [noise][swissroll][ToyBoostingOne]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_boosting_one_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyBoostingOne_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1",  "--batch_size", "2048", "--total_size", "100000", "--n_epoch", "100", 
+                "--lr",  "1e-3",  "--pred_goal", "noise", "--gamma", "0.025", "--n_samples", "1000", 
+                //"--normalize", 
+                "--seed","1",  "--save_eval", "--save_hdf"
+                //, "--save_fig"
+                ]    
+        // python diffusion_boosting_one_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingOne_4_64 --dataset swissroll --pred_goal  noise --gamma 0.025 --time_dim 1  --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_eval --save_hdf 
+        },
+        {
+            "name": "BoostingOne [grad][swissroll][ToyBoostingOne]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_boosting_one_train.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyBoostingOne_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1", "--batch_size", "2048", "--total_size", "100000", "--n_epoch", "100", 
+                "--lr",  "1e-3", "--pred_goal", "grad", "--gamma", "0.025", "--n_samples", "1000", 
+                //"--normalize",
+                "--seed","1", "--save_model", "--save_freq", "20", "--validation", "--save_hdf"
+                //, "--save_fig"
+                ] 
+        // python diffusion_boosting_one_train.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingOne_4_64 --dataset swissroll --pred_goal grad --gamma 0.025 --time_dim 1 --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_model --save_freq 20  --validation --save_hdf
+        },
+        {
+            "name": "BoostingOne [grad][swissroll][ToyBoostingOne]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/diffusion_boosting_one_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--beta_schedule", "linear", "--n_timesteps", "40", "--model", "ToyBoostingOne_4_64", "--dataset", "swissroll",  
+                "--time_dim", "1", "--batch_size", "2048", "--total_size", "100000", "--n_epoch", "100", 
+                "--lr",  "1e-3",  "--pred_goal", "grad", "--gamma", "0.025", "--n_samples", "1000", 
+                //"--normalize", 
+                "--seed","1",  "--save_eval", "--save_hdf"
+                //, "--save_fig"
+                ]    
+        // python diffusion_boosting_one_sampling.py --beta_schedule linear --n_timesteps 40 --model ToyBoostingOne_4_64 --dataset swissroll --pred_goal  grad --gamma 0.025 --time_dim 1 --batch_size 2048 --total_size 100000 --n_epoch 100 --lr 1e-3 --n_samples 1000 --seed 1 --save_eval --save_hdf 
+        },
+     /*
+     #################################################################################################################
+     #################################################################################################################
+     #################################################################################################################
+     *GAN**********************************************GAN********************************************************GAN*
+     #################################################################################################################
+     #################################################################################################################
+     #################################################################################################################
+     */   
+        {
+            "name": "GAN [|][swissroll][ToyGAN]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/gan_truly_rkl_train.py",
+            "console": "integratedTerminal",
+            "args": ["--model", "ToyGAN_4_64", "--dataset", "swissroll",  
+                "--z_dim", "1", "--batch_size", "1024", "--total_size", "4096", "--n_epoch", "5000", 
+                "--lr_dsc",  "1e-4", "--lr_gen", "1e-4", "--n_samples", "1000", 
+                "--loss_dsc",  "stan", "--loss_gen", "heur",
+                // "--loss_dsc",  "comb", "--loss_gen", "comb",
+                // "--loss_dsc",  "rvrs", "--loss_gen", "rvrs",
+                 //"--lc_dsc", "0.5 0.5 1 1",   "--lc_gen", "1 1", 
+                 "--lc_dsc", "0.5 0.5 1",   "--lc_gen", "1", 
+                //"--normalize", 
+                "--seed","1",  "--save_model", "--save_freq", "500", "--validation", "--save_hdf"
+                , "--save_fig"
+                ]    
+        // python gan_truly_rkl_train.py  --model ToyGAN_4_64 --dataset swissroll  --z_dim 1 --batch_size 2048 --total_size 100000 --n_epoch 100 --lr_dsc 1e-3 --lr_gen 1e-3 --loss_dsc stan --loss_gen heur --n_samples 1000 --seed 1 --save_model --save_freq 20  --validation  --save_hdf 
+        },
+        {
+            "name": "GAN [|][swissroll][ToyGAN]: sampling",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/gan_truly_rkl_sampling.py",
+            "console": "integratedTerminal",
+            "args": ["--model", "ToyGAN_4_64", "--dataset", "swissroll",  
+                "--z_dim", "1", "--batch_size", "2048", "--total_size", "10000", "--n_epoch", "100", 
+                "--lr_dsc",  "1e-3", "--lr_gen", "1e-3", "--n_samples", "1000", 
+                "--loss_dsc",  "stan", "--loss_gen", "heur",
+                // "--loss_dsc",  "comb", "--loss_gen", "comb",
+                // "--loss_dsc",  "rvrs", "--loss_gen", "rvrs",
+                //"--normalize", 
+                "--seed","1",  "--save_eval", "--save_hdf"
+                //, "--save_fig"
+                ]    
+        // python gan_truly_rkl_sampling.py --model ToyGAN_4_64 --dataset swissroll  --z_dim 1 --batch_size 2048 --total_size 100000 --n_epoch 100 --lr_dsc 1e-3 --lr_gen 1e-3 --loss_dsc stan --loss_gen heur --n_samples 1000 --seed 1 --save_eval --save_hdf 
+        },
+        {
+            "name": "GAN-wo-G [|][swissroll][ToyGAN]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/gan_without_generator_train.py",
+            "console": "integratedTerminal",
+            "args": ["--model", "ToyGAN_4_64", "--dataset", "swissroll",  
+                "--z_dim", "3", "--batch_size", "1024", "--total_size", "4096", "--n_epoch", "1000", 
+                "--lr_dsc",  "1e-4", "--lr_gen", "1e-4", "--lr_fk_dt", "0.001", "--n_timestep_smpl", "100", "--n_samples", "1000", 
+                "--loss_dsc",  "stan", "--loss_gen", "heur",
+                // "--loss_dsc",  "comb", "--loss_gen", "comb",
+                // "--loss_dsc",  "rvrs", "--loss_gen", "rvrs",
+                "--lc_dsc", "0.5 0.5 1",   "--lc_gen", "1", 
+                //"--normalize", 
+                "--seed","1",  "--save_model", "--save_freq", "100", "--validation", "--save_hdf"
+                //, "--save_fig"
+                ]    
+        // python gan_without_generator_train.py  --model ToyGAN_4_64 --dataset swissroll  --z_dim 1 --batch_size 2048 --total_size 4096 --n_epoch 100 --lr_dsc 1e-3 --lr_fk_dt 1e-3 --n_timestep_smpl 100 --lr_gen 1e-3 --loss_dsc stan --loss_gen heur --n_samples 1000 --seed 1 --save_model --save_freq 20  --validation  --save_hdf 
+        }
+        ,
+        {
+            "name": "GAN-wo-G [|][2moons][ToyGAN]: train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/gan_without_generator_train.py",
+            "console": "integratedTerminal",
+            "args": ["--model", "ToyGAN_4_64", "--dataset", "2moons",  
+                "--z_dim", "4", "--batch_size", "1024", "--total_size", "4096", "--n_epoch", "1000", 
+                "--lr_dsc",  "1e-4", "--lr_gen", "1e-4", "--lr_fk_dt", "0.002", "--n_timestep_smpl", "150", "--n_samples", "1000", 
+                "--loss_dsc",  "stan", "--loss_gen", "heur",
+                // "--loss_dsc",  "comb", "--loss_gen", "comb",
+                // "--loss_dsc",  "rvrs", "--loss_gen", "rvrs",
+                //"--normalize", 
+                "--seed","1",  "--save_model", "--save_freq", "100", "--validation", "--save_hdf"
+                , "--save_fig"
+                ]    
+        // python gan_without_generator_train.py  --model ToyGAN_4_64 --dataset 2moons  --z_dim 1 --batch_size 2048 --total_size 100000 --n_epoch 100 --lr_dsc 1e-3 --lr_gen 1e-3 --loss_dsc stan --loss_gen heur --n_samples 1000 --seed 1 --save_model --save_freq 20  --validation  --save_hdf 
+        }
+    ]
+    }
