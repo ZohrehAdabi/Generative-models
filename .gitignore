@@ -134,7 +134,7 @@ dmypy.json
 
 
 test.ipynb
-
+*ipynb
 *.tgz
 *.zip
 *.tar
@@ -150,3 +150,5 @@ saved_results
 old_code
 
 classifiers_evaluation
+
+# git reset --hard origin/main
